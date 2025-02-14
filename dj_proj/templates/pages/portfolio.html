@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="container-wrapper">
+        <div class="left-container">
+            <div class="left-side-contents">
+                <img src="{% static 'assets/mme.jpg' %}" alt="Profile Picture">
+
+                <div class="info">
+                    <span><i class="fas fa-user"></i>Age: 20</span>
+                    <span><i class="fas fa-birthday-cake"></i>Birthdate: January 22, 2004</span>
+                    <span><i class="fas fa-map-marker-alt"></i>Address: #18B Pisces st. Sta.Rita Olongapo City</span>
+                </div>
+                <!-- <div class="quote">"Everything happens for a reason"</div> -->
+
+                <!-- Light and Dark Mode Toggle -->
+                 <div class="mode-container">
+                    <div class="mode">
+                        <div class="mode-info">
+                            <i class="fa-solid fa-moon"></i> 
+                            <span class="link-name">Dark Mode</span>
+                        </div>
+                        
+                        <div class="mode-toggle">
+                            <span class="switch"></span>
+                        </div>
+                    </div>
+                 </div>
+                
+            </div>
+        </div>
+
+        <div class="right-container">
+            <nav>
+                <div class="links">
+                    <ul>
+                        <li>
+                            <button class="tab-btn"><i class="fas fa-home"></i><span>Home</span></button>
+                        </li>
+                        <li>
+                            <button class="tab-btn"><i class="fas fa-user"></i><span>About</span></button>
+                        </li>
+                        <li>
+                            <button class="tab-btn"><i class="fas fa-envelope"></i><span>Contacts</span></button>
+                        </li>
+                        <li>
+                            <button class="tab-btn"><i class="fas fa-briefcase"></i><span>Projects</span></button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+
+            <div class="right-side-contents">
+                <div class="home">
+                    <div class="contents">
+                        <div class="home-contents">
+                            <div class="intro">
+                                <span class="my-name-is">Hi! My name is... <!-- what? My name is... who? My name is chika chika Slim Shady--></span>
+                                <h1>Timothy Lance T. Dela Cruz</h1>
+                                <h3>And <span class="text-type"></span></h3>
+                            </div>
+        
+                            <div class="description">
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero eos asperiores sit dicta atque aperiam ab 
+                                    repellat ad, amet quasi id nemo sapiente numquam facere quos unde doloremque dolorem.</span>
+                            </div>
+        
+                            <div class="icon-links">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/JustRansu22" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/RansuKyouichi" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://discord.com/channels/ransukyouichi" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+        
+                            <button class="cv-btn">Download CV</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about">
+                    <div class="contents">
+                        <div class="about-content">
+                            <div class="self-intro">
+                                <h1>About Me</h1>
+                                <p>I am a student from Gordon College with a program of Bachelor of Science in Information Technology. 
+                                    I sometimes like programming and sometimes I don't when it doesn't work. I love it and I hate it
+                                    at the same time.</p><br>
+                    
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias nobis consequuntur ipsa molestiae 
+                                    aperiam eligendi suscipit officia officiis cumque eum, magni aut maxime voluptate ea debitis ducimus 
+                                    dicta quidem magnam!</p>
+                            </div>
+                    
+                            <div class="btn-infos">
+                                <button class="info-tab active">Hobbies</button>
+                                <button class="info-tab">Skills</button>
+                            </div>
+
+                            <div class="hobbies active">
+                                <div class="hobbies-container">
+                                    <div class="hobby">
+                                        <img src="{% static 'assets/gym-dumbbell-removebg-preview.png' %}" alt="Gym">
+                                        <h4>Going to the gym</h4>
+                                    </div>
+                                    <div class="hobby">
+                                        <img src="{% static 'assets/games-removebg-preview.png' %}" alt="Games">
+                                        <h4>Playing games</h4>
+                                    </div>
+                                    <div class="hobby">
+                                        <img src="{% static 'assets/learning-removebg-preview.png' %}" alt="learning">
+                                        <h4>Learning</h4>
+                                    </div>
+                                    <div class="hobby">
+                                        <img src="{% static 'assets/chess-removebg-preview.png' %}" alt="chess">
+                                        <h4>Chess</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills">
+                                <div class="skills-container">
+                                    <div class="skills-left">
+                                        <div class="skill">
+                                            <h4>HTML <span>85%</span></h4>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 85%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill">
+                                            <h4>CSS <span>40%</span></h4>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 40%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill">
+                                            <h4>JavaScript <span>5%</span></h4>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 5%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skills-right">
+                                        <div class="skill">
+                                            <h4>Angular <span>10%</span></h4>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 10%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill">
+                                            <h4>PHP <span>15%</span></h4>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 15%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="contacts">
+                    <div class="contents">
+
+                        <div class="about-contents">
+
+                            <div class="contact-infos">
+                                <div class="topic-text">Contact Me</div>
+    
+                                <div class="details-wrapper">
+                                    <div class="details">
+                                        <i class="fas fa-phone-alt"></i>
+                                        <div class="topic">Phone: </div>
+                                        <div class="text-one">09120349090</div>
+                                    </div>
+                                    <div class="details">
+                                        <i class="fas fa-envelope"></i>
+                                        <div class="topic">Email: </div>
+                                        <div class="text-one">202210072@gordoncollege.edu.ph</div>
+                                        <!-- <div class="text-two">202210072@gordoncollege.edu.ph</div> -->
+                                    </div>
+                                </div>
+                                <div class="contact-links">
+                                    <a href="https://www.facebook.com/JustRansu22" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="https://github.com/RansuKyouichi" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://discord.com/channels/ransukyouichi" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                                </div>
+                            </div>
+    
+                                <form action="#">
+                                    <div class="input-box">
+                                        <input type="text" placeholder="Enter your name">
+                                    </div>
+                                    <div class="input-box">
+                                        <input type="text" placeholder="Enter your last name">
+                                    </div>
+                                    <div class="input-box">
+                                        <input type="text" placeholder="Enter your email">
+                                    </div>
+                                    <div class="input-box message-box">
+                                        <textarea placeholder="Enter your message"></textarea>
+                                    </div>
+                                    <div class="button">
+                                        <input type="button" value="Submit">
+                                    </div>
+                                </form>
+                        </div>
+
+                    </div>
+                </div>
+                
+
+                <div class="projects">
+                    <div class="contents">
+                        <div class="title">
+                            <h1>Projects</h1>
+                        </div>
+                        
+                        <div class="projects-section">
+                            <div class="project-card">
+                                <img src="{% static 'assets/credify.png' %}" alt="Credify" class="credify">
+                                <div class="overlay">
+                                    <h3>Credify</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem recusandae illo excepturi impedit 
+                                        ducimus esse velit natus mollitia adipisci earum dolorum laboriosam a, distinctio eveniet reiciendis 
+                                        minus deleniti eos nostrum?</p>
+                                    <a href="https://example.com/project1" target="_blank">View Project</a>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{% static 'assets/LMS.png' %}" alt="LMS">
+                                <div class="overlay">
+                                    <h3>Library Management System</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem recusandae illo excepturi impedit 
+                                        ducimus esse velit natus mollitia adipisci earum dolorum laboriosam a, distinctio eveniet reiciendis 
+                                        minus deleniti eos nostrum?</p>
+                                    <a href="https://example.com/project2" target="_blank">View Project</a>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <img src="{% static 'assets/image-gallery.png' %}" alt="Image Gallery">
+                                <div class="overlay">
+                                    <h3>Image Gallery</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem recusandae illo excepturi impedit 
+                                        ducimus esse velit natus mollitia adipisci earum dolorum laboriosam a, distinctio eveniet reiciendis 
+                                        minus deleniti eos nostrum?</p>
+                                    <a href="https://example.com/project3" target="_blank">View Project</a>
+                                </div>
+                            </div>
+
+                            <!-- <div class="project-card">
+                                <img src="../assets/image-gallery.png" alt="Image Gallery">
+                                <div class="overlay">
+                                    <h3>Personal Profile</h3>
+                                    <p>A Personal Website made using HTML, Tailwind CSS, and JS  </p>
+                                    <a href="../IT-Elective-2/tailwind-tutorial/src/index.html" target="_blank">View Project</a>
+                                </div>
+                            </div> -->
+
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

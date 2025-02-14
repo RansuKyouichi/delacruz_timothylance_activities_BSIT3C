@@ -1,0 +1,1054 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --background: #1a1a1a;
+    --text-color: #f5f5f5;
+    --left-and-right-container: #333;
+    --icons-and-others: #d4af37;
+    --container-hover: rgba(0, 0, 0, 0.3);
+    --intro-color: #ffd700;
+    --text-default: #fff;
+    --hobby-img-bg: #1f1e1e;
+    --input-color: #3a3a3a;
+    --overlay-hover: #ad9404;
+    --overlay-card-bg: rgba(0, 0, 0, 0.7); 
+}
+
+body.light {
+    --background: #fff; 
+    --text-color: #1a1a1a;
+    --left-and-right-container: #f0f0f0; 
+    --icons-and-others: #6a0dad; 
+    --container-hover: rgba(0, 0, 0, 0.3); 
+    --intro-color: #6a0dad; 
+    --text-default: #1a1a1a; 
+    --hobby-img-bg: #f0f0f0; 
+    --input-color: #fff; 
+    --overlay-hover: #8a17db; 
+    --overlay-card-bg: rgba(255, 255, 255, 0.9); 
+}
+
+
+/* === Custom Scroll Bar CSS === */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #3A3B3C;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3A3B3C;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background); 
+    color: var(--text-color); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px; 
+    width: 100%;
+    max-width: 1450px;
+    margin: 20px auto;
+}
+
+/* Left Container layout */
+.left-container, .right-container {
+    background-color: var(--left-and-right-container); 
+    border-radius: 15px;
+    box-shadow: 0 8px 16px var(--container-hover);
+    overflow: hidden;
+    height: 90vh; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-container {
+    width: 25%; 
+    color: var(--text-color);
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.right-container {
+    width: 95%; 
+    padding: 40px 20px;
+}
+
+.left-container img {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.left-container img:hover {
+    transform: scale(1.15); 
+    box-shadow: 0 12px 24px var(--container-hover); 
+}
+
+.left-container .info {
+    text-align: left; 
+    margin-top: 20px;
+}
+
+.left-container .info span {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.left-container .info span i {
+    margin-right: 10px;
+    color: var(--icons-and-others); 
+}
+
+.left-container .info span:first-child {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.left-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px var(--container-hover);
+}
+
+.mode-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.mode {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Sun and Moon Icon Colors */
+.mode .fa-sun {
+    color: #d4af37; 
+}
+
+.mode .fa-moon {
+    color: #fff; 
+}
+
+.mode-toggle {
+    width: 45px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.mode-info{
+    font-size: 18px;
+}
+
+.mode-info i{
+    margin-right: 5px;
+}
+
+/* Mode text color */
+.mode .link-name {
+    color: var(--text-color);
+}
+
+.switch {
+    width: 20px;
+    height: 20px;
+    background-color: var(--text-default);
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 1.5px;
+    transition: transform 0.3s ease;
+}
+
+body.light .mode-toggle .switch {
+    transform: translateX(22px);
+}
+
+body.light .mode-toggle .switch::before {
+    left: 22px;
+}
+
+body.light .mode i {
+    content: "\f185"; /* Sun icon */
+}
+
+body.light .mode .link-name {
+    content: "Light Mode";
+}
+
+body:not(.light) .mode i {
+    content: "\f186"; /* Moon icon */
+}
+
+body:not(.light) .mode .link-name {
+    content: "Dark Mode";
+}
+
+/* ====== NavBar ======= */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+nav .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 10px;
+    display: flex;
+    gap: 30px;
+    flex: 1;
+}
+
+/* Styling for the navigation buttons */
+nav .links ul li button {
+    background-color: transparent;
+    border: 2px solid var(--icons-and-others); 
+    color: var(--icons-and-others); 
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    border: none    ;
+}
+
+nav .links ul li button i {
+    margin-right: 8px;
+}
+
+nav .links ul li button:hover {
+    background-color: var(--icons-and-others); 
+    color: var(--left-and-right-container); 
+    transform: translateY(-2px) scale(1.05); 
+    box-shadow: 0 8px 16px var(--container-hover); 
+}
+
+nav .links ul li button.active {
+    background-color: var(--icons-and-others); 
+    color: var(--left-and-right-container); 
+}
+
+/* ====== Right Side Container ====== */
+.right-side-contents {
+    margin-top: 20px;
+    background-color: var(--background); 
+    padding: 30px;
+    color: var(--text-color); 
+    border-radius: 10px;
+    box-shadow: 0 8px 16px var(--container-hover);
+    height: calc(100% - 70px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.right-container:hover .right-side-contents {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px var(--container-hover);
+}
+
+.right-side-contents .contents {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: moving .5s ease;
+}
+
+.right-side-contents .contents.active{
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ====== Home tab ======= */
+.home-contents{
+    margin-top: 45px;
+}
+
+.home .intro .my-name-is {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-default);
+}
+
+.intro h3{
+    font-size: 30px;
+}
+
+.intro h1 {
+    font-size: 45px;
+    margin: 10px 0;
+    color: var(--intro-color); 
+}
+
+.intro .text-type {
+    color: var(--intro-color); 
+}
+
+.home .intro {
+    margin-bottom: 20px;
+}
+
+.home .description {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--text-default);
+}   
+
+.icon-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+}
+
+.icon-links ul li a {
+    color: var(--text-color);
+    font-size: 26px; 
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-links ul li a:hover {
+    color: var(--icons-and-others); 
+    transform: scale(1.2); 
+}
+
+.cv-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--intro-color); 
+    color: var(--background); 
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 6px 12px var(--container-hover); 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cv-btn:hover {
+    background-color: var(--overlay-hover); 
+    transform: translateY(-3px) scale(1.05); 
+    box-shadow: 0 10px 20px var(--container-hover); 
+}
+
+/* ====== About tab ====== */
+.self-intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.self-intro h1 {
+    font-size: 32px;
+    color: var(--intro-color); 
+    margin-bottom: 20px;
+}
+
+.self-intro p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-color); 
+}
+
+.btn-infos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.btn-infos button {
+    padding: 12px 24px;
+    background-color: var(--left-and-right-container);
+    color: var(--intro-color);
+    border: 2px solid var(--intro-color);
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-infos button.active {
+    background-color: var(--intro-color); 
+    color: var(--left-and-right-container);
+}
+
+.btn-infos button:hover {
+    background-color: var(--intro-color); 
+    color: var(--left-and-right-container);
+    transform: translateY(-3px); 
+}
+
+/* ======= Hobbies ======= */
+.hobbies, .skills {
+    display: none; 
+    margin-top: 20px;
+    animation: moving .5s ease;
+}
+
+.hobbies.active, .skills.active {
+    display: block; 
+}
+
+.hobbies p, .skills p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.hobbies-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hobby {
+    text-align: center;
+    width: 150px; 
+    margin: 5px;
+}
+
+.hobby img {
+    width: 100%; 
+    height: auto;
+    background-size: cover;
+    border-radius: 10px;
+    background-color: var(--hobby-img-bg);
+    box-shadow: 0 4px 8px var(--container-hover);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 16px var(--container-hover); /* Add shadow on hover */
+}
+
+.hobby h4 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: var(--text-color); /* White text */
+}
+
+/* ======= Skills ======= */
+.skills {
+    margin-top: 20px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.skills-left, .skills-right {
+    flex: 1;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill h4 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--intro-color); /* Gold color */
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: var(--left-and-right-container);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--container-hover);
+}
+
+.progress {
+    height: 10px;
+    background-color: var(--intro-color);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+@keyframes moving {
+    from {transform: translate(50px); opacity: 0;}
+    to {transform: translate(0px); opacity: 1;}
+}
+
+/* ====== Contacts ====== */
+.contacts {
+    margin: 0 auto;
+    text-align: center; 
+}
+
+.about-contents {
+    padding: 10px;
+    margin-top: 45px;
+    display: flex;
+    gap: 40px; 
+    justify-content: center; 
+    gap: 40px; 
+    flex-wrap: wrap; 
+    width: 100%; 
+}
+
+.contact-infos {
+    flex: 1; /* Take up equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-infos .topic-text {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--intro-color);
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    justify-content: Center;
+    margin-bottom: 20px;
+}
+
+.contact-links a {
+    color: var(--text-color);
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: var(--intro-color);
+    transform: scale(1.2);
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.details i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: var(--icons-and-others);
+}
+
+.details .topic {
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.details {
+    font-size: 16px;
+}
+
+form {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-box input, .input-box textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    font-size: 16px;
+    box-shadow: 0 4px 8px var(--container-hover);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-box input::placeholder, .input-box textarea::placeholder {
+    color: var(--text-color);
+}
+
+.input-box input:focus, .input-box textarea:focus {
+    background-color: var(--input-color);
+    box-shadow: 0 6px 12px var(--container-hover);
+    outline: none;
+}
+
+.message-box textarea {
+    resize: none;
+    height: 120px;
+}
+
+.button{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.button input {
+    background-color: var(--intro-color);
+    color: var(--background);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-end; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button input:hover {
+    background-color: var(--overlay-hover);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px var(--container-hover);
+}
+
+/* ====== Projects ====== */
+.projects-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px var(--overlay-card-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.project-card .credify{
+    background: #fff;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px var(--container-hover);
+}
+
+.project-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-card-bg);
+    color: var(--text-color);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.overlay a {
+    padding: 10px 20px;
+    background-color: var(--intro-color);
+    color: var(--left-and-right-container);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.overlay a:hover {
+    background-color: var(--overlay-hover);
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 1200px) {
+    .container-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 1200px;
+        height: auto;
+        padding: 20px;  
+    }
+
+    .left-container {
+        width: 100%; 
+        height: auto;
+    }
+
+    .right-container {
+        width: 100%; 
+        height: auto;
+    }
+
+    .mode-container{
+        position: static;
+        bottom: auto;
+    }
+     
+    .mode{
+        justify-content: flex-start;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-wrapper{
+        padding: 20px;
+    }
+
+    .left-container {
+        padding: 20px 10px;
+        height: auto;
+    }
+
+    .right-container {
+        padding: 20px 10px; 
+    }
+
+    .intro h1 {
+        font-size: 36px;
+    }
+
+    .intro h3 {
+        font-size: 24px;
+    }
+
+    .home .intro .my-name-is {
+        font-size: 24px;
+    }
+
+    .cv-btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+
+    .btn-infos button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .icon-links ul li a {
+        font-size: 22px;
+    }
+
+    .self-intro h1 {
+        font-size: 28px;
+    }
+
+    .self-intro p {
+        font-size: 16px;
+    }
+
+    .contact-links a {
+        font-size: 22px;
+    }
+
+    .contact-infos .topic-text {
+        font-size: 32px;
+    }
+
+    .mode-container {
+        left: 10px;
+        bottom: 20px;
+        flex-direction: column;
+        align-items: flex-start; /* Align items at the start for a vertical layout */
+    }
+
+    .mode{
+        justify-content: flex-start;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 572px){
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav .links ul li button span {
+        display: none;
+    }
+
+    nav .links ul li button i{
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .left-container, .right-container {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    nav{
+        margin-bottom: 15px;
+    }
+
+    nav .links ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .right-side-contents {
+        height: auto;
+        margin-top: 0;
+    }
+
+    .hobbies-container, .skills-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contacts-tab {
+        display: flex;
+        flex-direction: column; 
+        padding: 20px;
+    }
+
+    nav .links ul li button {
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    nav .links ul li button {
+        justify-content: center;
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+
+    .mode-container {
+        bottom: 20px;
+        left: 10px;
+        flex-direction: row; 
+        align-items: center; 
+    }
+
+    .mode {
+        justify-content: space-between;
+        /* gap: 10px; */
+    }
+    
+    .container-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .right-side-contents {
+        padding: 20px;
+    }
+
+    .projects-section {
+        grid-template-columns: 1fr; 
+    }
+
+    .btn-infos {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .skills-container, .hobbies-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .skills-left, .skills-right, .hobby {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-container {
+        padding: 15px 10px;
+        height: auto;
+    }
+
+    nav{
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+
+    nav .links ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav .links ul li button i{
+        margin-right: 0;
+    }
+
+    nav .links ul li button span {
+        display: none;
+    }
+
+    nav .links ul li button{
+       text-align: center;
+    }
+
+    .mode-container {
+        top: auto; 
+        right: 5px;
+        bottom: 5px;
+        left: auto; 
+        flex-direction: row;
+        align-items: center; 
+    }
+
+    .mode-info {
+        margin-right: 5px; 
+    }
+    
+    .left-container img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .intro h1 {
+        font-size: 28px;
+    }
+
+    .intro h3 {
+        font-size: 20px;
+    }
+
+    .home .intro .my-name-is {
+        font-size: 20px;
+    }
+
+    .cv-btn {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+
+    .btn-infos button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .icon-links ul li a {
+        font-size: 20px;
+    }
+
+    .self-intro h1 {
+        font-size: 24px;
+    }
+
+    .self-intro p {
+        font-size: 14px;
+    }
+
+    .contact-links a {
+        font-size: 20px;
+    }
+
+    .contact-infos .topic-text {
+        font-size: 28px;
+    }
+
+    .projects-section {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .project-card .overlay h3 {
+        font-size: 20px;
+    }
+
+    .project-card .overlay p {
+        font-size: 14px;
+    }
+}
